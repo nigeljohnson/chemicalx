@@ -1,6 +1,7 @@
 import React from 'react';
 import TodosList from './todos/todosList';
 
+import CreateTodo from './todos/createTodo'
 
 // Mocking up Data, instead of server. ARRY of Object literals, with propeties set, as string and boolean.
 const todos = [
@@ -38,7 +39,7 @@ export default class App extends React.Component {
 
 			<div> <h1> From app.js </h1>
 
-
+			<CreateTodo/>
 			<TodosList todos={this.state.todos} />
 
 			</div>
