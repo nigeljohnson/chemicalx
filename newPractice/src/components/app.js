@@ -12,6 +12,11 @@ const todos = [
 {
 	task: 'React',
 	isCompleted: true
+},
+
+{
+	task: 'React',
+	isCompleted: true
 }
 
 ]

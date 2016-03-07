@@ -1,12 +1,12 @@
 import React from 'react';
 
 export default class TodosBody extends React.Component {
+
+
 	render() {
+		return (
 
-		return(
-
-				<div>body here</div>
-					
+			<tr> swag </tr>
 			);
 	}
 }

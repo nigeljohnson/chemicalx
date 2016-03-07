@@ -1,9 +1,17 @@
 import React from 'react';
-
-import TodosHead from './todosHead'
-import TodosBody from './todosBody'
+import _ from 'lodash';
+import TodosHead from './todosHead';
+import TodosListItem from './todosListItem';
+import TodosBody from './todosBody';
 
 export default class TodosList extends React.Component {
+
+	renderItems() {
+		return _.map(this.props.todos, (todo, index) =>
+			<TodosListItem key={index} {...todo} />);
+	}
+
+
 	render() {
 
 		console.log(this.props);
@@ -17,7 +25,10 @@ export default class TodosList extends React.Component {
 				<table>
 
 					<TodosHead/>
+					<tbody>
+					<tr> {this.renderItems()} </tr>
 					<TodosBody/>
+					</tbody>
 
 				</table>
 

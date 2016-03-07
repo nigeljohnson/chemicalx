@@ -1,5 +1,9 @@
 REACT STACK
 
+** ADDED DEPENDENCIES
+
+npm i -S lodash (or _.each)
+
 Super MEAN Stack: Angular, Node/Express, Webpack, MongoDB, SASS, Babel/ES6, Bootstrap
 
 RUN App
@@ -7,6 +11,7 @@ RUN App
 	- killall node
 
 https://www.youtube.com/watch?v=6Sbau-oE37w
+https://www.youtube.com/watch?v=YFP8lbdZ0cs
 
 EXPRESS
 	- npm i -S express
