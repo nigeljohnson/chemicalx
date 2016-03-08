@@ -1,0 +1,38 @@
+.nope {
+	&__camel {
+	color: #000;
+	}
+}
+
+body {
+	background: #33CE8E;
+}
+
+table {
+	background: #E4CD55;
+}
+
+.svgFace {
+  height: 100px;
+  width: 200px;
+}
+
+.tablezoom {
+	color: #000;
+}
+
+.todos {
+		
+	&__checkbox {
+
+	}
+
+	&__task {
+
+		&--isCompleted {
+			text-decoration: line-through;
+		}
+
+	}
+
+}

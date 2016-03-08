@@ -12,12 +12,45 @@ export default class TodosListItem extends React.Component {
 
 	};
 
+	//1. Green Red, Dynamic Styling
+	renderTaskSection() {
+		// Now we can use objects properies in this.props as variables now
+		const { task, isCompleted } = this.props;
+		console.log(this.props);
+
+		// Dynamic Styling Logic
+		const taskStyle = {
+			// Set Color Dynamically, if isCompleted is true/false
+			color: isCompleted ? /* if true */ 'green' : /* if false */ 'red',
+			cursor: 'pointer',
+
+		};
+
+		if (this.state.isEditing) {
+			return(
+				<td>
+					<form onSubmit="{this.onSaveClick.bind(this)}">
+						<input type="text" devaultVaule={task} ref="editInput" />
+						</form>
+				</td>
+				);
+		}
+
+		return(
+
+			//onClick handler for todosListItem
+			//modify arry in app.js, by accessing another method in app.js
+			<td style={taskStyle} onClick={this.props.toggleTask.bind(this, task)}>{task}</td>
+
+			);
+	}
+
 	renderActionSection() {
 		if (this.state.isEditing) {
 			return (
 
 				<td>
-					<button> Save </button>
+					<button onClick={this.onSaveClick.bind(this)}> Save </button>
 					<button onClick={this.onCancelClick.bind(this)}> Cancel </button>
 				</td>
 
@@ -36,7 +69,7 @@ export default class TodosListItem extends React.Component {
 	render() {
 		return (
 			<tr>
-				<td>{this.props.task}</td>
+				{this.renderTaskSection()}
 				{this.renderActionSection()}
 			</tr>
 			);
@@ -56,6 +89,15 @@ export default class TodosListItem extends React.Component {
 			isEditing: false 
 		});
 
+	}
+
+	onSaveClick(event) {
+		event.preventDefault();
+
+		const oldTask = this.props.task;
+		const newTask = this.refs.editInput.value;
+		this.props.saveTask(oldTask, newTask);
+		this.setState({ isEditing: false });
 	}
 
 }
