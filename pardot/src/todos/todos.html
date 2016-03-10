@@ -1,0 +1,60 @@
+<div>
+	<a ui-sref="about">about</a>
+	<a ui-sref="todos">todos</a>
+	<a ui-sref="nested">nested</a>
+
+	<h1>Todos</h1>
+
+	<form ng-submit="createTask()">
+		<input placeholder="Here" ng-model="createTaskInput"></input>
+		<button class="bemSyntax__button">Submit</button>
+	</form>
+
+
+
+	<table>
+		<thead>
+			<tr>
+				<th>Completed</th>
+				<th>Task</th>
+				<th>Action</th>
+				<input placeholder="Here" ng-model="createTaskInput"></input>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="todo in todos">
+				<td><input
+					type="checkbox"
+					ng-checked="{{todo.isCompleted}}"
+					ng-click="onCompletedClick(todo)"
+					class="todos__checkbox">
+					</input>
+				</td>
+				<td>
+
+				<!-- NG IF , show if condtion is true-->
+				<span ng-if="!todo.isEditing" class="todos__task" ng-class="{'todos__task--isCompleted': todo.isCompleted}">{{todo.task}}</span>
+
+				<form ng-submit="updateTask(todo)">
+					<!-- NG IF, NG-Value defaults value to $scope value in todos array -->
+					<input ng-if="todo.isEditing" ng-value="todo.task" ng-model="todo.updatedTask"></input>
+				</form>
+
+				</td>
+
+				<td ng-if="!todo.isEditing">
+					<button ng-click="onEditClick(todo)" class="">Edit</button>
+					<button ng-click="deleteTask(todo)" class="">Delete</button>
+				</td>
+
+				<td ng-if="todo.isEditing">
+					<button ng-click="updateTask(todo)" class="">Save</button>
+					<button ng-click="onEditClick(todo)"  class="">Cancel</button>
+				</td>
+
+			</tr>
+		</tbody>
+	</table>
+
+</div>

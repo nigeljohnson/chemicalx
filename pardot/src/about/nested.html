@@ -1,0 +1,28 @@
+<div>
+	<a ui-sref="about">about</a>
+	<a ui-sref="todos">todos</a>
+	<a ui-sref="nested">nested</a>
+
+	<h1>Nested State</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Angular Directives</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Directive</td>
+				<td>action</td>
+			</tr>
+			<tr>
+				<td>ngclick</td>
+				<td ng-class="{'': !isActive, 'tablezoom': isActive}"
+       	 			ng-init="isActive = false"
+      				ng-click="isActive = !isActive">is Active</td>
+			</tr>
+		</tbody>
+
+	</table>
+</div>

@@ -1,0 +1,28 @@
+@import 'svg.scss';
+
+@font-face {
+	font-family: "MuseoSlab";
+	src: url("/fonts/MuseoSlab/MuseoSlab100.otf");
+}
+@font-face {
+	font-family: "MuseoSans";
+	src: url("/fonts/MuseoSans/MuseoSansRounded-100.otf");
+}
+@font-face {
+	font-family: "MuseoSansBold";
+	src: url("/fonts/MuseoSans/MuseoSansRounded-700.otf");
+}
+
+body {
+	font-family: 'MuseoSansBold';
+	font-size: 3em;
+	color: #fff;
+}
+
+.MuseoSans {
+	font-family: MuseoSans;
+}
+
+.MuseoSansBold {
+	font-family: MuseoSansBold;
+}
